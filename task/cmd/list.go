@@ -1,14 +1,16 @@
+//package cmd have functionality to implement command line using cobra
 package cmd
 
 import (
 	"fmt"
-	"os"
 
 	db "github.com/chinmaya1/gophercises/task/db"
 
 	"github.com/spf13/cobra"
 )
 
+//listCmd used to list all the tasks
+//Run() implements such a way that inside lists all the tasks stored in Bolt DB
 var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List all of your tasks",
@@ -17,7 +19,7 @@ var listCmd = &cobra.Command{
 		tasks, err := db.RetriveTasks()
 		if err != nil {
 			fmt.Println("Error displaying tasks:", err.Error())
-			os.Exit(1)
+			return
 		}
 		if len(tasks) == 0 {
 			fmt.Printf("No tasks to finish\n")
@@ -30,6 +32,7 @@ var listCmd = &cobra.Command{
 	},
 }
 
+//init() defines add the ListCmd to RootCmd
 func init() {
 	RootCmd.AddCommand(listCmd)
 

@@ -1,3 +1,4 @@
+//package cmd have functionality to implement command line using cobra
 package cmd
 
 import (
@@ -8,6 +9,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+//doCmd defines that tasks are completed as well as deleted
 var doCmd = &cobra.Command{
 	Use:   "do",
 	Short: "Mark a task as complete",

@@ -1,3 +1,4 @@
+//package cmd have functionality to implement command line using cobra
 package cmd
 
 import (
@@ -8,6 +9,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+//addCmd add tasks to the list
 var addCmd = &cobra.Command{
 	Use:   "add",
 	Short: "Adds a task to your task list",

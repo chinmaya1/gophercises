@@ -11,12 +11,15 @@ import (
 	homedir "github.com/mitchellh/go-homedir"
 )
 
+//
 func main() {
 	home, _ := homedir.Dir()
-	dbPath := filepath.Join(home, "tasks.db")
+	dbPath := filepath.Join(home, "my.db")
 	check(db.Init(dbPath))
 	check(cmd.RootCmd.Execute())
 }
+
+// check() checks  if any error is comes
 func check(err error) {
 	if err != nil {
 		fmt.Println(err.Error())
