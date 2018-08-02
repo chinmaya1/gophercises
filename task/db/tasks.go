@@ -23,7 +23,7 @@ type Task struct {
 //Init method initialises Database and creates task bucket if doesn't exist.
 func Init(dbPath string) error {
 	var err error
-	Db, err = bolt.Open("my.db", 0600, &bolt.Options{Timeout: 1 * time.Second})
+	Db, err = bolt.Open(dbPath, 0600, &bolt.Options{Timeout: 1 * time.Second})
 	if err != nil {
 		return err
 	}

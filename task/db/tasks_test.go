@@ -51,10 +51,17 @@ func TestIntToByte(t *testing.T) {
 
 func TestByteToInt(t *testing.T) {
 	var s []byte
-	s = make([]byte, 8, 12)
+	s = make([]byte, 5)
 	s = []byte{0, 0, 0, 0, 0, 0, 0, 10}
 	val := bytetoint(s)
 	if val == 0 {
 		t.Error("Expected int got", val)
+	}
+}
+
+func TestNInit(t *testing.T) {
+	err := Init("/home/chinmaya/my.db")
+	if err == nil {
+		t.Errorf("%s.............", err)
 	}
 }

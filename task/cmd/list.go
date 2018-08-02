@@ -17,6 +17,7 @@ var listCmd = &cobra.Command{
 
 	Run: func(cmd *cobra.Command, args []string) {
 		tasks, err := db.RetriveTasks()
+
 		if err != nil {
 			fmt.Println("Error displaying tasks:", err.Error())
 			return
