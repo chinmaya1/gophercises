@@ -3,7 +3,8 @@ package main
 import (
 	"testing"
 
-	"github.com/CloudBroker/dash_utils/dashtest"
+	"github.ibm.com/CloudBroker/dash_utils/dashtest"
+	//"github.ibm.com/CloudBroker/dash_utils/dashtest"
 )
 
 func TestM(t *testing.T) {
