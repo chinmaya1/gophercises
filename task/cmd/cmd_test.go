@@ -27,7 +27,7 @@ func TestAddCommand(t *testing.T) {
 	record, _ := os.OpenFile("testing.txt", os.O_CREATE|os.O_RDWR, 0666)
 	oldStdout := os.Stdout
 	os.Stdout = record
-	a := []string{"Complete gophercises 7"}
+	a := []string{"Completed gophercises 7"}
 	addCmd.Run(addCmd, a)
 	record.Seek(0, 0)
 	content, err := ioutil.ReadAll(record)
